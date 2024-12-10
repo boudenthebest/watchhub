@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب جديد</title>
+    <script src="https://WatchHub.com/oauth2callback" async defer></script>
+    <style>
+        /* أضف هنا تنسيق الزر */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>إنشاء حساب جديد</h1>
+
+        <!-- Google Sign-In Button -->
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+        <!-- يمكنك إضافة نموذج آخر لإنشاء حساب باستخدام البريد الإلكتروني وكلمة المرور -->
+    </div>
+
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log("User ID: " + profile.getId());
+            console.log("Full Name: " + profile.getName());
+            console.log("Email: " + profile.getEmail());
+
+            // يمكنك إرسال البيانات إلى السيرفر لإنشاء الحساب أو تخزينها
+        }
+    </script>
+</body>
+</html>
