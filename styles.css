@@ -7,8 +7,8 @@
 
 body, html {
     font-family: Arial, sans-serif;
-    height: 100%;
     background-color: #f0f0f0;
+    height: 100%;
 }
 
 /* Barre d'en-tête */
@@ -32,11 +32,11 @@ body, html {
 .logo-section {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacement entre le logo et le texte */
+    gap: 10px;
 }
 
 .small-logo {
-    width: 40px; /* Taille du logo */
+    width: 40px;
     height: auto;
 }
 
@@ -52,7 +52,6 @@ body, html {
     gap: 15px;
 }
 
-/* Styles des boutons */
 .subscribe-btn, .create-account-btn {
     background-color: #ff6600;
     color: white;
@@ -68,33 +67,71 @@ body, html {
     background-color: #e55d00;
 }
 
-/* Ajustements pour les petits écrans (Téléphones) */
+/* Styles pour la page login.html */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto; /* Centrer le formulaire */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #e55d00;
+}
+
+p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustements pour les petits écrans */
 @media (max-width: 600px) {
-    /* Réduire la taille des boutons sur les petits écrans */
-    .subscribe-btn, .create-account-btn {
-        padding: 5px 10px;  /* Réduire le padding */
-        font-size: 12px;    /* Réduire la taille du texte */
-        width: 100px;       /* Limiter la largeur pour mieux s'adapter */
-        height: 35px;       /* Ajuster la hauteur pour maintenir une bonne apparence */
-        text-align: center;
+    .login-container {
+        width: 90%;
+        padding: 15px;
     }
-
-    /* Réduire la taille du logo et du texte WatchHub */
-    .logo-section {
-        display: flex;
-        align-items: center;
-    }
-
-    .small-logo {
-        width: 30px; /* Réduire la taille du logo */
-    }
-
-    .brand-name {
-        font-size: 16px; /* Réduire la taille du texte */
-    }
-
-    /* Ajuster l'espacement sur petits écrans */
-    .header-bar {
-        padding: 10px 10px; /* Réduire le padding de la barre d'en-tête */
+    button {
+        font-size: 14px;
     }
 }
