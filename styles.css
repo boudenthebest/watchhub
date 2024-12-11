@@ -26,13 +26,13 @@ header {
 }
 
 .logo img {
-    width: 50px; /* حجم الشعار */
-    height: 50px;
+    width: 40px; /* تقليص حجم الشعار */
+    height: 40px;
     margin-right: 10px; /* مسافة بين الشعار والنص */
 }
 
 .logo span {
-    font-size: 24px;
+    font-size: 22px; /* تصغير النص */
     color: white;
     font-weight: bold;
 }
