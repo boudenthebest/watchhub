@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316439107752169584/Picsart_24-12-11_17-18-40-836.jpg?ex=675b0cf5&is=6759bb75&hm=90963f509401eae5f56504f4a667d8c4b1ed184f154a4255f64950c5175550d8&' no-repeat center center fixed;
+    background: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316439107752169584/Picsart_24-12-11_17-18-40-836.jpg?ex=675b0cf5&is=6759bb75&hm=90963f509401eae5f56504f4a667d8c4b1ed184f154a4255f64950c5175550d8&') no-repeat center center fixed;
     background-size: cover;
     color: white; /* لون النص */
 }
