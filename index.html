@@ -8,30 +8,25 @@
 </head>
 <body>
     <header>
-        <!-- الشعار والنص -->
-        <div class="logo-container">
-            <img src="https://cdn.discordapp.com/attachments/1295360411234992209/1316374991972995112/file-9FweXAU86es6meFLkHF2fx-removebg-preview.png?ex=675ad13f&is=67597fbf&hm=98653b8bb0dcaa32849186c0e09de9c1d28580382d182778490ec0507916d441&" alt="WatchHub Logo" class="logo">
-            <span class="brand-name">WatchHub.com</span>
-        </div>
+    <!-- الشعار والنص -->
+    <div class="logo-container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <span class="brand-name">WatchHub</span>
+    </div>
+    
+    <!-- زر القائمة -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        ☰
+    </div>
+</header>
 
-        <!-- زر القائمة ثلاثية الخطوط -->
-        <button class="menu-btn" id="toggle-button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
-
-    <!-- القائمة المنسدلة -->
-    <nav class="nav-menu hidden" id="nav-menu">
-        <ul>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">Series</a></li>
-            <li><a href="#">Sign-in</a></li>
-            <li><a href="#">Sign-up</a></li>
-            <li><a href="#">Payment Method</a></li>
-        </ul>
-    </nav>
+<!-- القائمة الجانبية -->
+<div id="side-menu" class="side-menu">
+    <a href="#">Home</a>
+    <a href="#">Movies</a>
+    <a href="#">Sign Up</a>
+    <a href="#">Contact</a>
+</div>
 
     <!-- تحميل الـ JavaScript في نهاية الـ body -->
     <script src="script.js" defer></script>
