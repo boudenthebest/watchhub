@@ -12,19 +12,40 @@ body {
 
 /* الشريط العلوي */
 header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: rgba(51, 51, 51, 0.8); /* شفافية بسيطة لجعل النصوص واضحة */
-    padding: 20px;
-    text-align: center;
+    padding: 10px 20px;
 }
 
+/* تصميم الشعار */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px; /* حجم الشعار */
+    height: 50px;
+    margin-right: 10px; /* مسافة بين الشعار والنص */
+}
+
+.logo span {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+
+/* تصميم القائمة */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline-block;
     margin: 0 15px;
 }
 
