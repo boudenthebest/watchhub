@@ -1,4 +1,4 @@
-/* التنسيق الأساسي للصفحة *//* التنسيق العام */
+/* التنسيق العام */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -92,4 +92,14 @@ header {
 main {
     padding: 20px;
     text-align: center;
+}
+
+#movies-list {
+    margin-top: 20px;
+}
+
+#movies-list li {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 5px 0;
 }
