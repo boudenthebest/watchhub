@@ -1,33 +1,10 @@
-/* styles.css */
 body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
     margin: 0;
-    padding: 0;
-    height: 100vh; /* يجعل الخلفية تغطي كامل الشاشة */
-    background: linear-gradient(45deg, #ff6b6b, #f06595, #ffb6b6, #a1c4fd); /* التدرج اللوني */
-    background-size: 400% 400%; /* تكبير مساحة الخلفية لتتحرك بشكل ملحوظ */
-    animation: gradientAnimation 10s ease infinite; /* تطبيق الحركة */
-    display: flex; /* لضبط المحتوى في الوسط */
-    justify-content: center; /* التوسيط أفقي */
-    align-items: center; /* التوسيط عمودي */
-    color: white; /* النص باللون الأبيض */
-    font-family: 'Arial', sans-serif;
-}
-
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.content {
-    text-align: center; /* توسيط النص */
-    padding: 50px; /* إضافة مسافة حول النص */
-    background: rgba(0, 0, 0, 0.5); /* خلفية مظللة للنص */
-    border-radius: 10px; /* زوايا دائرية */
+    background-image: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316204121921032192/file-HCbUWGmSKbu1KrJXKb3fwX.webp?ex=675a321c&is=6758e09c&hm=9aaad8e609552052a1cce93ebd89c7735109f18f66db028e08816f2486973fc5&'); /* Add your image path here */
+    background-attachment: fixed; /* This makes the background fixed */
+    background-size: cover; /* This ensures the image covers the entire screen */
+    background-position: center; /* Centers the background */
 }
