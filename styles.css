@@ -56,3 +56,57 @@ main {
     text-align: center;
     margin-top: 50px;
 }
+
+/* Centrer la page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* Style du conteneur de connexion */
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+/* Style du champ du mot de passe */
+input[type="password"] {
+    background-color: rgba(0, 0, 0, 0.1); /* Fond transparent noir */
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Style des autres champs et bouton */
+input[type="text"], button {
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+/* Bouton d'inscription */
+.register-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.register-btn:hover {
+    background-color: #45a049;
+}
