@@ -9,7 +9,7 @@
 <body>
     <div class="account-container">
         <h2>Create Account</h2>
-        <form action="loginhere.html" method="POST" id="create-account-form">
+        <form id="create-account-form">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
@@ -24,21 +24,20 @@
                 <option value="">Select your country</option>
                 <option value="US">United States</option>
                 <option value="TN">Tunisia</option>
-                <!-- Ajouter plus de pays ici -->
+                <!-- Ajoutez plus de pays ici -->
             </select>
 
             <button type="submit">Create Account</button>
         </form>
 
-        <!-- Lien pour retourner à la page de connexion -->
         <p>Already have an account? <a href="login.html">Login here</a></p>
     </div>
 
     <script>
-        // Pour rediriger vers la page login après création du compte
+        // Lorsque le formulaire est soumis, on redirige vers la page de connexion
         document.getElementById('create-account-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            window.location.href = 'login.html';  // Redirection vers la page de login
+            event.preventDefault();  // Empêche la soumission du formulaire par défaut
+            window.location.href = 'login.html';  // Redirection vers la page de connexion
         });
     </script>
 </body>
