@@ -1,24 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WatchHub</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="left-section">
-            <img src="logo.png" alt="Logo" class="logo">
-            <span class="brand-name">WatchHub</span>
-        </div>
-        <div class="right-section">
-            <button class="subscribe-btn">S'abonner</button>
-            <button class="login-btn">Se connecter</button>
-        </div>
-    </header>
-    <main class="background-pattern">
-        <!-- Contenu principal (facultatif) -->
-    </main>
-</body>
-</html>
+/* Réinitialisation des styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.1) 25%), 
+                linear-gradient(225deg, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.1) 25%);
+    background-size: 40px 40px;
+    background-color: #dcdcdc;
+}
+
+/* Logo */
+.large-logo {
+    width: 120px; /* Taille ajustable */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Nom de la marque */
+.brand-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Boutons */
+.buttons-container {
+    display: flex;
+    gap: 15px;
+}
+
+.subscribe-btn, .login-btn {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-btn:hover, .login-btn:hover {
+    background-color: #e55d00;
+}
