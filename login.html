@@ -3,37 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - Create Account</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header-bar">
-        <!-- Logo et texte WatchHub -->
-        <div class="logo-section">
-            <img src="https://cdn.discordapp.com/attachments/1295360411234992209/1316374991972995112/file-9FweXAU86es6meFLkHF2fx-removebg-preview.png" alt="Logo" class="small-logo">
-            <span class="brand-name">WatchHub</span>
-        </div>
-
-        <!-- Boutons alignés à droite -->
-        <div class="buttons-section">
-            <button class="subscribe-btn">S'abonner</button>
-            <button class="create-account-btn" onclick="window.location.href='create-account.html'">Create Account</button>
-        </div>
-    </header>
-
-    <!-- Formulaire de connexion -->
     <div class="login-container">
-        <h2>Login</h2>
-        <form action="/login" method="POST">
+        <h2>Create Account</h2>
+        <form action="/create-account" method="POST">
+            <!-- Username et Password -->
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
-            
+
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            
-            <button type="submit">Login</button>
+
+            <!-- Bouton de connexion -->
+            <button type="submit">Create Account</button>
         </form>
-        <p>Don't have an account? <a href="create-account.html">Create one here</a></p>
+
+        <!-- Lien pour retourner vers la page de connexion -->
+        <p>Already have an account? <a href="login.html">Login here</a></p>
     </div>
 </body>
 </html>
