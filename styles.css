@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('background.jpg') no-repeat center center fixed;
+    background: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316409173860290610/Messenger_creation_64C641BE-5558-4810-BA22-228699611F78.png?ex=675af114&is=67599f94&hm=cd3145c0edf09baa34db5e151a17818475232f320ad32c2c8f9a21190d21d2af&') no-repeat center center fixed;
     background-size: cover;
     color: white; /* لون النص */
 }
