@@ -3,38 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix Clone</title>
+    <title>WatchHub</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
+        <div class="logo">
+            <img src="https://cdn.discordapp.com/attachments/1295360411234992209/1316374991972995112/file-9FweXAU86es6meFLkHF2fx-removebg-preview.png" alt="WatchHub Logo">
+            <span>WatchHub</span>
+        </div>
         <nav>
-            <ul>
-                <li><a href="#">Movies</a></li>
-                <li><a href="#">Series</a></li>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#">Movies</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Comedy</a></li>
+                        <li><a href="#">Drama</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Series</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Thriller</a></li>
+                        <li><a href="#">Horror</a></li>
+                        <li><a href="#">Fantasy</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Sign-in</a></li>
                 <li><a href="#">Sign-up</a></li>
                 <li><a href="#">Payment Method</a></li>
             </ul>
         </nav>
     </header>
-    <header>
-    <div class="logo">
-        <img src="https://cdn.discordapp.com/attachments/1295360411234992209/1316374991972995112/file-9FweXAU86es6meFLkHF2fx-removebg-preview.png?ex=675ad13f&is=67597fbf&hm=98653b8bb0dcaa32849186c0e09de9c1d28580382d182778490ec0507916d441&" alt="WatchHub Logo">
-        <span>WatchHub.com</span>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">Series</a></li>
-            <li><a href="#">Sign-in</a></li>
-            <li><a href="#">Sign-up</a></li>
-            <li><a href="#">Payment Method</a></li>
-        </ul>
-    </nav>
-    </header>
     <div class="main-content">
-        <h1>Welcome to Netflix Clone</h1>
+        <h1>Welcome to WatchHub</h1>
         <div id="movies-list">
             <div class="movie">Movie 1</div>
             <div class="movie">Movie 2</div>
