@@ -20,7 +20,10 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #fff;
+    background-color: transparent; /* Background transparent */
+    background-image: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316444055688974346/Picsart_24-12-11_17-38-22-519.jpg?ex=675b1191&is=6759c011&hm=17bf333b4afcef715ccde34cf4ba50369dc81f794ab8ccbef01e62cbe894d2a4&'); /* Ajout du background */
+    background-size: cover; /* Recouvrir toute la barre */
+    background-position: center; /* Centrer l'image */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -97,4 +100,4 @@ body, html {
     .header-bar {
         padding: 10px 10px; /* Réduire le padding de la barre d'en-tête */
     }
-}
+        }
