@@ -1,14 +1,10 @@
-/* Réinitialisation des styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Corps de la page */
 body, html {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
     height: 100%;
+    background-color: #f0f0f0;
 }
 
 /* Barre d'en-tête */
@@ -18,7 +14,7 @@ body, html {
     align-items: center;
     padding: 10px 20px;
     background-color: transparent;
-    background-image: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316444055688974346/Picsart_24-12-11_17-38-22-519.jpg?ex=675b1191&is=6759c011&hm=17bf333b4afcef715ccde34cf4ba50369dc81f794ab8ccbef01e62cbe894d2a4');
+    background-image: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316444055688974346/Picsart_24-12-11_17-38-22-519.jpg');
     background-size: cover;
     background-position: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -28,16 +24,16 @@ body, html {
     z-index: 1000;
 }
 
-/* Section logo */
+/* Logo et texte WatchHub */
 .logo-section {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
 .small-logo {
-    width: 40px;
+    width: 40px; /* Taille du logo */
     height: auto;
+    margin-right: 10px;
 }
 
 .brand-name {
@@ -46,13 +42,13 @@ body, html {
     color: #333;
 }
 
-/* Boutons alignés à droite */
+/* Boutons à droite */
 .buttons-section {
     display: flex;
     gap: 15px;
 }
 
-.subscribe-btn, .create-account-btn {
+.create-account-btn, .subscribe-btn {
     background-color: #ff6600;
     color: white;
     border: none;
@@ -63,29 +59,32 @@ body, html {
     transition: background-color 0.3s ease;
 }
 
-.subscribe-btn:hover, .create-account-btn:hover {
+.create-account-btn:hover, .subscribe-btn:hover {
     background-color: #e55d00;
 }
 
-/* Styles pour la page login.html */
+/* Conteneur de création de compte */
 .login-container {
     width: 100%;
     max-width: 400px;
-    margin: 100px auto; /* Centrer le formulaire */
+    margin-top: 100px; /* Espacement depuis le haut */
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
+/* Titre */
 h2 {
-    text-align: center;
     margin-bottom: 20px;
 }
 
+/* Styles des champs du formulaire */
 label {
     display: block;
     margin-bottom: 5px;
+    text-align: left;
 }
 
 input {
@@ -111,8 +110,8 @@ button:hover {
     background-color: #e55d00;
 }
 
+/* Lien pour la page de login */
 p {
-    text-align: center;
     margin-top: 15px;
 }
 
@@ -125,12 +124,18 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Ajustements pour les petits écrans */
+/* Ajustements pour petits écrans */
 @media (max-width: 600px) {
+    .create-account-btn, .subscribe-btn {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
     .login-container {
         width: 90%;
         padding: 15px;
     }
+
     button {
         font-size: 14px;
     }
