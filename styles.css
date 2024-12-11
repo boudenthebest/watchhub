@@ -6,57 +6,57 @@
 }
 
 body, html {
-    height: 100%;
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.1) 25%), 
                 linear-gradient(225deg, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.1) 25%);
     background-size: 40px 40px;
     background-color: #dcdcdc;
+    height: 100%;
 }
 
-.page-container {
+/* Barre d'en-tête */
+.header-bar {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
-/* Logo */
-.large-logo {
-    width: 120px; /* Taille ajustable */
+/* Section logo */
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.small-logo {
+    width: 40px; /* Taille du logo */
     height: auto;
-    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
-/* Nom de la marque */
 .brand-name {
-    font-size: 28px;
+    font-size: 18px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 20px;
 }
 
-/* Ligne séparatrice */
-.separator-line {
-    width: 80%; /* Ajuste la largeur de la ligne */
-    border: 0;
-    border-top: 2px solid #ccc;
-    margin: 20px 0;
-}
-
-/* Boutons */
-.buttons-container {
+/* Boutons à droite */
+.buttons-section {
     display: flex;
-    gap: 20px; /* Espacement entre les boutons */
+    gap: 15px;
 }
 
 .subscribe-btn, .create-account-btn {
     background-color: #ff6600;
     color: white;
     border: none;
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 8px 15px;
+    font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
