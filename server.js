@@ -22,7 +22,32 @@ app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
 
-function toggleMenu() {
-    const menu = document.getElementById('nav-menu');
-    menu.classList.toggle('show');
+document.getElementById('toggle-button').addEventListener('click', () => {
+    const moviesList = document.getElementById('movies-list');
+
+    // تبديل العرض/الإخفاء
+    if (moviesList.classList.contains('hidden')) {
+        moviesList.classList.remove('hidden');
+        moviesList.classList.add('visible');
+        fetchMovies();
+    } else {
+        moviesList.classList.remove('visible');
+        moviesList.classList.add('hidden');
+    }
+});
+
+// جلب بيانات الأفلام من الـ API
+function fetchMovies() {
+    fetch('/api/movies')
+        .then(response => response.json())
+        .then(data => {
+            const moviesList = document.getElementById('movies-list');
+            moviesList.innerHTML = ''; // مسح القائمة الحالية
+            data.forEach(movie => {
+                const li = document.createElement('li');
+                li.textContent = `${movie.title} - ${movie.genre}`;
+                moviesList.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error fetching movies:', error));
 }
