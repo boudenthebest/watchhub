@@ -22,14 +22,14 @@ app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
 
-// Toggle القائمة الرئيسية (ظهور/اختفاء)
+// Toggle عرض القائمة الرئيسية (ظهور/اختفاء)
 document.getElementById('toggle-button').addEventListener('click', () => {
     const menu = document.getElementById('nav-menu');
     menu.classList.toggle('hidden');
 });
 
 // Toggle عرض الأفلام
-document.getElementById('toggle-button').addEventListener('click', () => {
+document.getElementById('toggle-button-movies').addEventListener('click', () => {
     const moviesList = document.getElementById('movies-list');
 
     // تبديل العرض/الإخفاء
