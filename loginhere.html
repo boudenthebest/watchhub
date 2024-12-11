@@ -29,16 +29,16 @@
 
             <button type="submit">Create Account</button>
         </form>
-        
+
         <!-- Lien pour retourner à la page de connexion -->
         <p>Already have an account? <a href="login.html">Login here</a></p>
     </div>
 
     <script>
+        // Pour rediriger vers la page login après création du compte
         document.getElementById('create-account-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            // Une fois le formulaire soumis, rediriger automatiquement vers la page de login
-            window.location.href = 'login.html';
+            window.location.href = 'login.html';  // Redirection vers la page de login
         });
     </script>
 </body>
