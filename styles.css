@@ -5,16 +5,13 @@
     box-sizing: border-box;
 }
 
-/* Styles du body et de la page */
 body, html {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Fond de la page */
-    background-image: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316444055688974346/Picsart_24-12-11_17-38-22-519.jpg?ex=675b1191&is=6759c011&hm=17bf333b4afcef715ccde34cf4ba50369dc81f794ab8ccbef01e62cbe894d2a4');
-    background-size: cover;
-    background-position: center;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
 }
 
 /* Barre d'en-tête */
@@ -23,7 +20,10 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Noir transparent */
+    background-color: transparent;
+    background-image: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316444055688974346/Picsart_24-12-11_17-38-22-519.jpg?ex=675b1191&is=6759c011&hm=17bf333b4afcef715ccde34cf4ba50369dc81f794ab8ccbef01e62cbe894d2a4');
+    background-size: cover;
+    background-position: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -31,89 +31,61 @@ body, html {
     z-index: 1000;
 }
 
-/* Section logo */
-.logo-section {
+/* Section formulaire de création de compte */
+.create-account-container {
     display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
-.small-logo {
-    width: 40px; /* Taille du logo */
-    height: auto;
-    margin-right: 10px;
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limite la taille du formulaire */
+    text-align: center;
 }
 
-.brand-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-}
-
-/* Boutons à droite */
-.buttons-section {
+/* Formulaire */
+form {
     display: flex;
-    gap: 15px; /* Espace entre les boutons */
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Styles des boutons */
-.subscribe-btn, .create-account-btn {
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
     background-color: #ff6600;
     color: white;
     border: none;
-    padding: 8px 15px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.subscribe-btn:hover, .create-account-btn:hover {
+button:hover {
     background-color: #e55d00;
 }
 
-/* Contenu principal de la page */
-.home-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding-top: 100px; /* Décalage pour l'en-tête fixe */
-}
-
-.home-content h2 {
-    font-size: 36px;
-    font-weight: bold;
-}
-
-/* Ajustements pour les petits écrans (Téléphones) */
+/* Responsivité pour les petits écrans */
 @media (max-width: 600px) {
-    /* Réduire la taille des boutons sur les petits écrans */
-    .subscribe-btn, .create-account-btn {
-        padding: 5px 10px;  /* Réduire le padding */
-        font-size: 12px;    /* Réduire la taille du texte */
-        width: 100px;       /* Limiter la largeur pour mieux s'adapter */
-        height: 35px;       /* Ajuster la hauteur pour maintenir une bonne apparence */
-        text-align: center;
+    .form-container {
+        padding: 15px;
     }
 
-    /* Réduire la taille du logo et du texte WatchHub */
-    .logo-section {
-        display: flex;
-        align-items: center;
-    }
-
-    .small-logo {
-        width: 30px; /* Réduire la taille du logo */
-    }
-
-    .brand-name {
-        font-size: 16px; /* Réduire la taille du texte */
-    }
-
-    /* Ajuster l'espacement sur petits écrans */
-    .header-bar {
-        padding: 10px 10px; /* Réduire le padding de la barre d'en-tête */
+    input, button {
+        font-size: 14px;
     }
 }
