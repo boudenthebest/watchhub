@@ -72,8 +72,11 @@ body, html {
 @media (max-width: 600px) {
     /* Réduire la taille des boutons sur les petits écrans */
     .subscribe-btn, .create-account-btn {
-        padding: 6px 12px;
-        font-size: 12px;
+        padding: 5px 10px;  /* Réduire le padding */
+        font-size: 12px;    /* Réduire la taille du texte */
+        width: 100px;       /* Limiter la largeur pour mieux s'adapter */
+        height: 35px;       /* Ajuster la hauteur pour maintenir une bonne apparence */
+        text-align: center;
     }
 
     /* Réduire la taille du logo et du texte WatchHub */
@@ -88,5 +91,10 @@ body, html {
 
     .brand-name {
         font-size: 16px; /* Réduire la taille du texte */
+    }
+
+    /* Ajuster l'espacement sur petits écrans */
+    .header-bar {
+        padding: 10px 10px; /* Réduire le padding de la barre d'en-tête */
     }
 }
