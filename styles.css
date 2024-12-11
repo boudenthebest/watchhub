@@ -1,46 +1,33 @@
 /* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
     margin: 0;
-}
-
-header {
-    background-color: #000;
-    padding: 20px;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
     padding: 0;
+    height: 100vh; /* يجعل الخلفية تغطي كامل الشاشة */
+    background: linear-gradient(45deg, #ff6b6b, #f06595, #ffb6b6, #a1c4fd); /* التدرج اللوني */
+    background-size: 400% 400%; /* تكبير مساحة الخلفية لتتحرك بشكل ملحوظ */
+    animation: gradientAnimation 10s ease infinite; /* تطبيق الحركة */
+    display: flex; /* لضبط المحتوى في الوسط */
+    justify-content: center; /* التوسيط أفقي */
+    align-items: center; /* التوسيط عمودي */
+    color: white; /* النص باللون الأبيض */
+    font-family: 'Arial', sans-serif;
 }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-}
-
-.main-content {
-    padding: 20px;
-}
-
-#movies-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.movie {
-    background-color: #333;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
+.content {
+    text-align: center; /* توسيط النص */
+    padding: 50px; /* إضافة مسافة حول النص */
+    background: rgba(0, 0, 0, 0.5); /* خلفية مظللة للنص */
+    border-radius: 10px; /* زوايا دائرية */
 }
