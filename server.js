@@ -22,6 +22,13 @@ app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
 
+// Toggle القائمة الرئيسية (ظهور/اختفاء)
+document.getElementById('toggle-button').addEventListener('click', () => {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('hidden');
+});
+
+// Toggle عرض الأفلام
 document.getElementById('toggle-button').addEventListener('click', () => {
     const moviesList = document.getElementById('movies-list');
 
@@ -51,9 +58,3 @@ function fetchMovies() {
         })
         .catch(error => console.error('Error fetching movies:', error));
 }
-
-// Toggle القائمة الرئيسية (ظهور/اختفاء)
-document.getElementById('toggle-button').addEventListener('click', () => {
-    const menu = document.getElementById('nav-menu');
-    menu.classList.toggle('hidden');
-});
