@@ -21,3 +21,8 @@ app.use(express.static('public'));
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
+
+function toggleMenu() {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('show');
+}
