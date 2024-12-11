@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WatchHub</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .login-container, .create-account-container {
-            display: none; /* Par défaut, cacher les deux formulaires */
-        }
-        .active {
-            display: block; /* Montrer la section active */
-        }
-    </style>
 </head>
 <body>
     <header class="header-bar">
@@ -25,52 +17,14 @@
         <!-- Boutons alignés à droite -->
         <div class="buttons-section">
             <button class="subscribe-btn">S'abonner</button>
-            <button class="create-account-btn" onclick="showCreateAccountForm()">Create Account</button>
+            <button class="create-account-btn" onclick="window.location.href='login.html'">Create Account</button>
         </div>
     </header>
 
-    <!-- Formulaire de connexion -->
-    <div class="login-container active" id="loginForm">
-        <h2>Login</h2>
-        <form action="/login" method="POST">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <button type="submit">Login</button>
-        </form>
-        <button class="back-to-login" onclick="showCreateAccountForm()">Create Account</button>
+    <!-- Contenu de la page d'accueil -->
+    <div class="home-content">
+        <h2>Welcome to WatchHub</h2>
+        <p>Explore and create your account to get started!</p>
     </div>
-
-    <!-- Formulaire de création de compte -->
-    <div class="create-account-container" id="createAccountForm">
-        <h2>Create Account</h2>
-        <form action="/create-account" method="POST">
-            <label for="newUsername">Username:</label>
-            <input type="text" id="newUsername" name="username" required>
-            
-            <label for="newPassword">Password:</label>
-            <input type="password" id="newPassword" name="password" required>
-
-            <button type="submit">Create Account</button>
-        </form>
-        <button class="back-to-login" onclick="showLoginForm()">Back to Login</button>
-    </div>
-
-    <script>
-        // Fonction pour afficher le formulaire de création de compte et cacher celui de login
-        function showCreateAccountForm() {
-            document.getElementById('loginForm').classList.remove('active');
-            document.getElementById('createAccountForm').classList.add('active');
-        }
-
-        // Fonction pour afficher le formulaire de login et cacher celui de création de compte
-        function showLoginForm() {
-            document.getElementById('createAccountForm').classList.remove('active');
-            document.getElementById('loginForm').classList.add('active');
-        }
-    </script>
 </body>
 </html>
