@@ -37,7 +37,14 @@
         // Lorsque le formulaire est soumis, on redirige vers la page de connexion
         document.getElementById('create-account-form').addEventListener('submit', function(event) {
             event.preventDefault();  // Empêche la soumission du formulaire par défaut
-            window.location.href = 'login.html';  // Redirection vers la page de connexion
+            
+            // Ici vous pouvez ajouter la logique de sauvegarde des données du formulaire
+            // par exemple, enregistrer l'utilisateur dans une base de données (via PHP, Node.js, etc.)
+
+            // Après l'inscription, rediriger vers la page de connexion
+            setTimeout(function() {
+                window.location.href = 'login.html';  // Redirection vers la page de connexion
+            }, 500); // Un petit délai pour simuler l'enregistrement
         });
     </script>
 </body>
