@@ -51,3 +51,9 @@ function fetchMovies() {
         })
         .catch(error => console.error('Error fetching movies:', error));
 }
+
+// Toggle القائمة الرئيسية (ظهور/اختفاء)
+document.getElementById('toggle-button').addEventListener('click', () => {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('hidden');
+});
