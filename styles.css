@@ -7,10 +7,7 @@
 
 body, html {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.1) 25%), 
-                linear-gradient(225deg, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.1) 25%);
-    background-size: 40px 40px;
-    background-color: #dcdcdc;
+    background-color: #f4f4f4;
     height: 100%;
 }
 
@@ -20,10 +17,10 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: transparent; /* Background transparent */
-    background-image: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316444055688974346/Picsart_24-12-11_17-38-22-519.jpg?ex=675b1191&is=6759c011&hm=17bf333b4afcef715ccde34cf4ba50369dc81f794ab8ccbef01e62cbe894d2a4&'); /* Ajout du background */
-    background-size: cover; /* Recouvrir toute la barre */
-    background-position: center; /* Centrer l'image */
+    background-color: transparent;
+    background-image: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316444055688974346/Picsart_24-12-11_17-38-22-519.jpg?ex=675b1191&is=6759c011&hm=17bf333b4afcef715ccde34cf4ba50369dc81f794ab8ccbef01e62cbe894d2a4');
+    background-size: cover;
+    background-position: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -46,13 +43,13 @@ body, html {
 .brand-name {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #fff;
 }
 
 /* Boutons à droite */
 .buttons-section {
     display: flex;
-    gap: 15px; /* Espace entre les boutons */
+    gap: 15px;
 }
 
 /* Styles des boutons */
@@ -71,15 +68,58 @@ body, html {
     background-color: #e55d00;
 }
 
+/* Formulaire de connexion */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto 50px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #e55d00;
+}
+
 /* Ajustements pour les petits écrans (Téléphones) */
 @media (max-width: 600px) {
     /* Réduire la taille des boutons sur les petits écrans */
     .subscribe-btn, .create-account-btn {
-        padding: 5px 10px;  /* Réduire le padding */
-        font-size: 12px;    /* Réduire la taille du texte */
-        width: 100px;       /* Limiter la largeur pour mieux s'adapter */
-        height: 35px;       /* Ajuster la hauteur pour maintenir une bonne apparence */
-        text-align: center;
+        padding: 5px 10px;  
+        font-size: 12px;    
     }
 
     /* Réduire la taille du logo et du texte WatchHub */
@@ -89,15 +129,15 @@ body, html {
     }
 
     .small-logo {
-        width: 30px; /* Réduire la taille du logo */
+        width: 30px; 
     }
 
     .brand-name {
-        font-size: 16px; /* Réduire la taille du texte */
+        font-size: 16px;
     }
 
     /* Ajuster l'espacement sur petits écrans */
     .header-bar {
-        padding: 10px 10px; /* Réduire le padding de la barre d'en-tête */
+        padding: 10px 10px; 
     }
-        }
+}
