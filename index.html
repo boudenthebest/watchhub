@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موقع مشاهدة الأفلام</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <style>
-        /* تصميم الصفحة */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://example.com/background.jpg'); /* ضع هنا رابط الصورة الخلفية */
+            background-image: url('https://WatchHub.com');
             background-size: cover;
             background-position: center;
             color: white;
@@ -57,6 +57,11 @@
         .btn-secondary:hover {
             background-color: #555;
         }
+
+        /* تصميم زر Google Sign-In */
+        .g-signin2 {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -70,8 +75,25 @@
             <a href="signup.html" class="btn btn-secondary">إنشاء حساب</a>
         </div>
         
+        <!-- زر Google Sign-In -->
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
         <!-- زر البدء -->
         <a href="movies.html" class="btn">ابدأ المشاهدة</a>
     </div>
+
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log("User ID: " + profile.getId());
+            console.log("Full Name: " + profile.getName());
+            console.log("Given Name: " + profile.getGivenName());
+            console.log("Family Name: " + profile.getFamilyName());
+            console.log("Image URL: " + profile.getImageUrl());
+            console.log("Email: " + profile.getEmail());
+
+            // يمكنك هنا إرسال المعلومات إلى السيرفر لإتمام عملية التسجيل أو الدخول
+        }
+    </script>
 </body>
 </html>
