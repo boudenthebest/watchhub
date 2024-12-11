@@ -7,30 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header-bar">
-        <!-- Logo et texte WatchHub -->
-        <div class="logo-section">
-            <img src="https://cdn.discordapp.com/attachments/1295360411234992209/1316374991972995112/file-9FweXAU86es6meFLkHF2fx-removebg-preview.png?ex=675ad13f&is=67597fbf&hm=98653b8bb0dcaa32849186c0e09de9c1d28580382d182778490ec0507916d441&" alt="Logo" class="small-logo">
-            <span class="brand-name">WatchHub</span>
-        </div>
-    </header>
-    
-    <div class="create-account-container">
-        <div class="form-container">
-            <h2>Create an Account</h2>
-            <form action="/submit-form" method="POST">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <button type="submit">Create Account</button>
-            </form>
-        </div>
+    <div class="login-container">
+        <h2>Create Account</h2>
+        <form action="/create-account" method="POST">
+            <!-- Username et Password -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Bouton de création de compte -->
+            <button type="submit">Create Account</button>
+        </form>
+
+        <!-- Lien pour retourner vers la page de connexion -->
+        <p>Already have an account? <a href="login.html">Login here</a></p>
     </div>
 </body>
 </html>
