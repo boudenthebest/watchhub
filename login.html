@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Create Account</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="login-container">
-        <h2>Create Account</h2>
-        <form action="/create-account" method="POST">
-            <!-- Username et Password -->
+        <h2>Login</h2>
+        <form action="/login" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
-            <!-- Bouton de connexion -->
-            <button type="submit">Create Account</button>
+            <button type="submit">Login</button>
         </form>
-
-        <!-- Lien pour retourner vers la page de connexion -->
-        <p>Already have an account? <a href="login.html">Login here</a></p>
+        <p>Don't have an account? <a href="create_account.html">Create an Account</a></p>
     </div>
 </body>
 </html>
