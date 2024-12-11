@@ -8,6 +8,10 @@
 body, html {
     height: 100%;
     font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.1) 25%), 
+                linear-gradient(225deg, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.1) 25%);
+    background-size: 40px 40px;
+    background-color: #dcdcdc;
 }
 
 .page-container {
@@ -16,17 +20,13 @@ body, html {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.1) 25%), 
-                linear-gradient(225deg, rgba(255, 255, 255, 0.3) 25%, rgba(0, 0, 0, 0.1) 25%);
-    background-size: 40px 40px;
-    background-color: #dcdcdc;
 }
 
 /* Logo */
 .large-logo {
     width: 120px; /* Taille ajustable */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* Nom de la marque */
@@ -34,16 +34,24 @@ body, html {
     font-size: 28px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+/* Ligne séparatrice */
+.separator-line {
+    width: 80%; /* Ajuste la largeur de la ligne */
+    border: 0;
+    border-top: 2px solid #ccc;
+    margin: 20px 0;
 }
 
 /* Boutons */
 .buttons-container {
     display: flex;
-    gap: 15px;
+    gap: 20px; /* Espacement entre les boutons */
 }
 
-.subscribe-btn, .login-btn {
+.subscribe-btn, .create-account-btn {
     background-color: #ff6600;
     color: white;
     border: none;
@@ -54,6 +62,6 @@ body, html {
     transition: background-color 0.3s ease;
 }
 
-.subscribe-btn:hover, .login-btn:hover {
+.subscribe-btn:hover, .create-account-btn:hover {
     background-color: #e55d00;
 }
