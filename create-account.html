@@ -7,21 +7,28 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="login-container">
+    <div class="account-container">
         <h2>Create Account</h2>
         <form action="/create-account" method="POST">
-            <!-- Username et Password -->
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
-            <!-- Bouton de création de compte -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="">Select your country</option>
+                <option value="US">United States</option>
+                <option value="TN">Tunisia</option>
+                <!-- Add more countries here -->
+            </select>
+
             <button type="submit">Create Account</button>
         </form>
-
-        <!-- Lien pour retourner vers la page de connexion -->
         <p>Already have an account? <a href="login.html">Login here</a></p>
     </div>
 </body>
