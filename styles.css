@@ -1,73 +1,31 @@
-/* تنسيق الجسم والخلفية */
+/* Centrer le contenu de la page d'accueil */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background: url('https://cdn.discordapp.com/attachments/1295360411234992209/1316444055688974346/Picsart_24-12-11_17-38-22-519.jpg?ex=675b1191&is=6759c011&hm=17bf333b4afcef715ccde34cf4ba50369dc81f794ab8ccbef01e62cbe894d2a4&') no-repeat center center fixed;
-    background-size: cover;
-    color: white; /* لون النص */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
-/* تنسيق الهيدر */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.6); /* خلفية شفافة للهيدر */
-    padding: 10px 20px;
-    color: white;
-}
-
-/* تصميم زر "Create Account" */
-.create-account-btn {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.create-account-btn:hover {
-    background-color: #0056b3;
-}
-
-/* تصميم الشعار والنص */
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    width: 40px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.brand-name {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* محتوى الصفحة */
-main {
-    text-align: center;
-    margin-top: 50px;
-}
-
-/* Centrer la page */
-body {
+.home-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
+    flex-direction: column;
 }
 
-/* Style du conteneur de connexion */
+/* Style du logo */
+.logo-container {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+/* Style du formulaire de connexion */
 .login-container {
     background-color: white;
     padding: 30px;
@@ -77,7 +35,7 @@ body {
     text-align: center;
 }
 
-/* Style du champ du mot de passe */
+/* Champ du mot de passe transparent */
 input[type="password"] {
     background-color: rgba(0, 0, 0, 0.1); /* Fond transparent noir */
     border: 1px solid #ccc;
@@ -87,7 +45,7 @@ input[type="password"] {
     margin: 10px 0;
 }
 
-/* Style des autres champs et bouton */
+/* Autres champs et bouton */
 input[type="text"], button {
     padding: 10px;
     border-radius: 5px;
@@ -96,17 +54,22 @@ input[type="text"], button {
     border: 1px solid #ccc;
 }
 
-/* Bouton d'inscription */
-.register-btn {
+/* Bouton "Create an Account" */
+.create-account-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.create-account-btn button {
     background-color: #4CAF50;
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
-    text-decoration: none;
     border-radius: 5px;
 }
 
-.register-btn:hover {
+.create-account-btn button:hover {
     background-color: #45a049;
 }
