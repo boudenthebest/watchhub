@@ -52,6 +52,7 @@ body, html {
     gap: 15px; /* Espace entre les boutons */
 }
 
+/* Styles des boutons */
 .subscribe-btn, .create-account-btn {
     background-color: #ff6600;
     color: white;
@@ -65,4 +66,27 @@ body, html {
 
 .subscribe-btn:hover, .create-account-btn:hover {
     background-color: #e55d00;
+}
+
+/* Ajustements pour les petits écrans (Téléphones) */
+@media (max-width: 600px) {
+    /* Réduire la taille des boutons sur les petits écrans */
+    .subscribe-btn, .create-account-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    /* Réduire la taille du logo et du texte WatchHub */
+    .logo-section {
+        display: flex;
+        align-items: center;
+    }
+
+    .small-logo {
+        width: 30px; /* Réduire la taille du logo */
+    }
+
+    .brand-name {
+        font-size: 16px; /* Réduire la taille du texte */
+    }
 }
