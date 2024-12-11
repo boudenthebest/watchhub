@@ -3,38 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dropdown Menu</title>
+    <title>WatchHub</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="https://cdn.discordapp.com/attachments/1295360411234992209/1316374991972995112/file-9FweXAU86es6meFLkHF2fx-removebg-preview.png?ex=675ad13f&is=67597fbf&hm=98653b8bb0dcaa32849186c0e09de9c1d28580382d182778490ec0507916d441&" alt="WatchHub Logo">
-            <span>WatchHub</span>
+        <!-- الشعار والنص -->
+        <div class="logo-container">
+            <img src="https://cdn.discordapp.com/attachments/1295360411234992209/1316374991972995112/file-9FweXAU86es6meFLkHF2fx-removebg-preview.png?ex=675ad13f&is=67597fbf&hm=98653b8bb0dcaa32849186c0e09de9c1d28580382d182778490ec0507916d441&" alt="WatchHub Logo" class="logo">
+            <span class="brand-name">WatchHub.com</span>
         </div>
-        <!-- زر القائمة ثلاثي -->
+
+        <!-- زر القائمة ثلاثية الخطوط -->
         <button class="menu-btn" id="toggle-button">
             <span></span>
             <span></span>
             <span></span>
         </button>
-        <!-- القائمة المنسدلة -->
-        <nav class="nav-menu hidden" id="nav-menu">
-            <ul>
-                <li><a href="#">Movies</a></li>
-                <li><a href="#">Series</a></li>
-                <li><a href="#">Sign-in</a></li>
-                <li><a href="#">Sign-up</a></li>
-                <li><a href="#">Payment Method</a></li>
-            </ul>
-        </nav>
     </header>
 
+    <!-- القائمة المنسدلة -->
+    <nav class="nav-menu hidden" id="nav-menu">
+        <ul>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Series</a></li>
+            <li><a href="#">Sign-in</a></li>
+            <li><a href="#">Sign-up</a></li>
+            <li><a href="#">Payment Method</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <h1>Movies List</h1>
-        <button id="toggle-movies-btn">Show Movies</button>
-        <ul id="movies-list" class="hidden"></ul>
+        <h1>Welcome to WatchHub!</h1>
+        <p>Enjoy watching your favorite movies and series.</p>
     </main>
 </body>
 </html>
