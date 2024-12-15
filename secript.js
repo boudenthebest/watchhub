@@ -58,3 +58,36 @@ function fetchMovies() {
         })
         .catch(error => console.error('Error fetching movies:', error));
 }
+
+const express = require('express');
+const { OAuth2Client } = require('google-auth-library');
+const bodyParser = require('body-parser');
+
+const app = express();
+const CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID';  // استبدلها بـ Client ID الخاص بك
+const client = new OAuth2Client(CLIENT_ID);
+
+app.use(bodyParser.json());
+
+app.post('/auth/google', async (req, res) => {
+    const { token } = req.body;
+    try {
+        const ticket = await client.verifyIdToken({
+            idToken: token,
+            audience: CLIENT_ID,  // تأكد من أن الـ Client ID هو نفسه في الواجهة الخلفية
+        });
+        const payload = ticket.getPayload();
+        const userId = payload['sub'];
+        console.log(payload);
+
+        // يمكنك الآن تخزين بيانات المستخدم في قاعدة البيانات
+        res.json({ success: true, user: payload });
+    } catch (error) {
+        console.error(error);
+        res.status(401).json({ success: false, message: 'Invalid token' });
+    }
+});
+
+app.listen(3000, () => {
+    console.log('Server running on http://localhost:3000');
+});
