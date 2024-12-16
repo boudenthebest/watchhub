@@ -21,22 +21,19 @@
         </div>
     </header>
 </body>
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
-  <!-- زر تسجيل الدخول -->
-  <h1>Welcome to Google Login Project</h1>
-  <button id="googleLoginBtn">Login with Google</button>
-
-  <!-- Modal -->
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <p>Choose an email to log in:</p>
-      <button id="loginWithEmail">Login with Email</button>
+    <div style="text-align: center; margin-top: 50px;">
+        <h1>Login with Email</h1>
+        <!-- زر تسجيل الدخول -->
+        <button id="loginWithEmail" style="padding: 10px 20px; font-size: 18px;">
+            Login with Email
+        </button>
+        <!-- مكان عرض البيانات بعد تسجيل الدخول -->
+        <div id="userDetails" style="margin-top: 20px;"></div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
