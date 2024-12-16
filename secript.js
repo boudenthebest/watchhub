@@ -88,12 +88,36 @@ function handleCredentialResponse(response) {
 }
 
 // إعداد Google Client ID
+// تهيئة Google Identity Services
 google.accounts.id.initialize({
-  client_id: "1072787701159-0mtjiarec329rqrmmfabttv9qe8b4vaj.apps.googleusercontent.com", // حط ال Client ID متاعك هنا
-  callback: handleCredentialResponse,
+  client_id: "1072787701159-0mtjiarec329rqrmmfabttv9qe8b4vaj.apps.googleusercontent.com", // حط Client ID الخاص بك هنا
+  callback: handleCredentialResponse // الدالة إلي تعالج بيانات تسجيل الدخول
 });
 
-// عرض نافذة اختيار البريد الإلكتروني
-loginWithEmail.onclick = () => {
-  google.accounts.id.prompt();
+// عند الضغط على الزر يظهر نافذة اختيار الحساب
+document.getElementById("loginWithEmail").onclick = () => {
+  google.accounts.id.prompt(); // نافذة تسجيل الدخول
 };
+
+// دالة معالجة البيانات بعد اختيار الحساب
+function handleCredentialResponse(response) {
+  console.log("Encoded JWT ID token: " + response.credential);
+
+  // فك تشفير الـ JWT Token لعرض البيانات
+  const userDetails = decodeJwt(response.credential);
+  document.getElementById("userDetails").innerHTML = `
+    <h3>Welcome, ${userDetails.name}!</h3>
+    <p>Email: ${userDetails.email}</p>
+    <img src="${userDetails.picture}" alt="Profile Picture" style="border-radius: 50%;"/>
+  `;
+}
+
+// دالة فك تشفير JWT Token
+function decodeJwt(token) {
+  const base64Url = token.split('.')[1];
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+  return JSON.parse(jsonPayload);
+}
