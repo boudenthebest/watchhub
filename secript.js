@@ -1,126 +1,48 @@
 const express = require('express');
+const passport = require('passport');
+const session = require('express-session');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
 const app = express();
-const port = 3000;
 
-// بيانات الأفلام (ممكن تكون من قاعدة بيانات)
-const movies = [
-    { id: 1, title: 'Movie 1', genre: 'Action' },
-    { id: 2, title: 'Movie 2', genre: 'Comedy' },
-    { id: 3, title: 'Movie 3', genre: 'Drama' }
-];
+// إعداد الجلسات
+app.use(session({ secret: 'your_secret_key', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
-// تقديم بيانات الأفلام عبر API
-app.get('/api/movies', (req, res) => {
-    res.json(movies);
+// إعداد Google OAuth
+passport.use(new GoogleStrategy({
+    clientID: '1072787701159-0mtjiarec329rqrmmfabttv9qe8b4vaj.apps.googleusercontent.com',       // حط الـ Client ID متاعك
+    clientSecret: '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', // حط الـ Client Secret متاعك
+    callbackURL: '/auth/google/callback'
+}, (accessToken, refreshToken, profile, done) => {
+    return done(null, profile);
+}));
+
+// تخزين معلومات المستخدم
+passport.serializeUser((user, done) => {
+    done(null, user);
+});
+passport.deserializeUser((obj, done) => {
+    done(null, obj);
 });
 
-// تقديم ملفات الـ static (HTML, CSS, JS)
-app.use(express.static('public'));
-
-// تشغيل السيرفر
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+// Routes
+app.get('/', (req, res) => {
+    res.send('<h1>Login Page</h1><a href="/auth/google">Login with Google</a>');
 });
 
-// Toggle عرض القائمة الرئيسية (ظهور/اختفاء)
-document.getElementById('toggle-button').addEventListener('click', () => {
-    const menu = document.getElementById('nav-menu');
-    menu.classList.toggle('hidden');
-});
+// Google Auth Routes
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-// Toggle عرض الأفلام
-document.getElementById('toggle-button-movies').addEventListener('click', () => {
-    const moviesList = document.getElementById('movies-list');
-
-    // تبديل العرض/الإخفاء
-    if (moviesList.classList.contains('hidden')) {
-        moviesList.classList.remove('hidden');
-        moviesList.classList.add('visible');
-        fetchMovies();
-    } else {
-        moviesList.classList.remove('visible');
-        moviesList.classList.add('hidden');
+app.get('/auth/google/callback', 
+    passport.authenticate('google', { failureRedirect: '/' }),
+    (req, res) => {
+        res.send(`Hello ${req.user.displayName}, Logged in with Google!`);
     }
-});
-
-// جلب بيانات الأفلام من الـ API
-function fetchMovies() {
-    fetch('/api/movies')
-        .then(response => response.json())
-        .then(data => {
-            const moviesList = document.getElementById('movies-list');
-            moviesList.innerHTML = ''; // مسح القائمة الحالية
-            data.forEach(movie => {
-                const li = document.createElement('li');
-                li.textContent = `${movie.title} - ${movie.genre}`;
-                moviesList.appendChild(li);
-            });
-        })
-        .catch(error => console.error('Error fetching movies:', error));
-}
-
-// إعداد الـ Modal
-const modal = document.getElementById("loginModal");
-const googleLoginBtn = document.getElementById("googleLoginBtn");
-const closeModal = document.getElementById("closeModal");
-const loginWithEmail = document.getElementById("loginWithEmail");
-
-// فتح نافذة الـ Modal
-googleLoginBtn.onclick = () => {
-  modal.style.display = "block";
-};
-
-// غلق نافذة الـ Modal
-closeModal.onclick = () => {
-  modal.style.display = "none";
-};
-
-window.onclick = (event) => {
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-};
-
-// Google Login API
-function handleCredentialResponse(response) {
-  console.log("Encoded JWT ID token: " + response.credential);
-  alert("Login Successful! Token: " + response.credential);
-}
-
-// إعداد Google Client ID
-// تهيئة Google Identity Services
-// تأكد من استبدال 1072787701159-0mtjiarec329rqrmmfabttv9qe8b4vaj.apps.googleusercontent.com بـ Client ID الذي حصلت عليه من Google Cloud Console
-google.accounts.id.initialize({
-    client_id: "1072787701159-0mtjiarec329rqrmmfabttv9qe8b4vaj.apps.googleusercontent.com", // استبدل بـ Client ID الخاص بك
-    callback: handleCredentialResponse
-});
-
-// عرض زر تسجيل الدخول
-google.accounts.id.renderButton(
-    document.getElementById("google-signin"), 
-    { theme: "outline", size: "large" } // تصميم الزر
 );
 
-// التعامل مع استجابة التوثيق
-function handleCredentialResponse(response) {
-    const responsePayload = decodeJwtResponse(response.credential);
-
-    // عرض بيانات المستخدم (على سبيل المثال: الاسم، البريد الإلكتروني)
-    console.log("Name: " + responsePayload.name);
-    console.log("Email: " + responsePayload.email);
-    console.log("User ID: " + responsePayload.sub);
-
-    // هنا يمكنك إرسال الـ Token إلى الخادم لتوثيق المستخدم
-    // أو تخزين بيانات المستخدم في الجلسة (session)
-}
-
-// دالة لفك تشفير JWT (JSON Web Token) لاستخراج بيانات المستخدم
-function decodeJwtResponse(token) {
-    const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-
-    return JSON.parse(jsonPayload);
-}
+// تشغيل السيرفر
+app.listen(3000, () => {
+    console.log('Server running on http://localhost:3000');
+});
