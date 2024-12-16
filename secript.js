@@ -89,35 +89,38 @@ function handleCredentialResponse(response) {
 
 // إعداد Google Client ID
 // تهيئة Google Identity Services
+// تأكد من استبدال 1072787701159-0mtjiarec329rqrmmfabttv9qe8b4vaj.apps.googleusercontent.com بـ Client ID الذي حصلت عليه من Google Cloud Console
 google.accounts.id.initialize({
-  client_id: "1072787701159-0mtjiarec329rqrmmfabttv9qe8b4vaj.apps.googleusercontent.com", // حط Client ID الخاص بك هنا
-  callback: handleCredentialResponse // الدالة إلي تعالج بيانات تسجيل الدخول
+    client_id: "1072787701159-0mtjiarec329rqrmmfabttv9qe8b4vaj.apps.googleusercontent.com", // استبدل بـ Client ID الخاص بك
+    callback: handleCredentialResponse
 });
 
-// عند الضغط على الزر يظهر نافذة اختيار الحساب
-document.getElementById("loginWithEmail").onclick = () => {
-  google.accounts.id.prompt(); // نافذة تسجيل الدخول
-};
+// عرض زر تسجيل الدخول
+google.accounts.id.renderButton(
+    document.getElementById("google-signin"), 
+    { theme: "outline", size: "large" } // تصميم الزر
+);
 
-// دالة معالجة البيانات بعد اختيار الحساب
+// التعامل مع استجابة التوثيق
 function handleCredentialResponse(response) {
-  console.log("Encoded JWT ID token: " + response.credential);
+    const responsePayload = decodeJwtResponse(response.credential);
 
-  // فك تشفير الـ JWT Token لعرض البيانات
-  const userDetails = decodeJwt(response.credential);
-  document.getElementById("userDetails").innerHTML = `
-    <h3>Welcome, ${userDetails.name}!</h3>
-    <p>Email: ${userDetails.email}</p>
-    <img src="${userDetails.picture}" alt="Profile Picture" style="border-radius: 50%;"/>
-  `;
+    // عرض بيانات المستخدم (على سبيل المثال: الاسم، البريد الإلكتروني)
+    console.log("Name: " + responsePayload.name);
+    console.log("Email: " + responsePayload.email);
+    console.log("User ID: " + responsePayload.sub);
+
+    // هنا يمكنك إرسال الـ Token إلى الخادم لتوثيق المستخدم
+    // أو تخزين بيانات المستخدم في الجلسة (session)
 }
 
-// دالة فك تشفير JWT Token
-function decodeJwt(token) {
-  const base64Url = token.split('.')[1];
-  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-  }).join(''));
-  return JSON.parse(jsonPayload);
+// دالة لفك تشفير JWT (JSON Web Token) لاستخراج بيانات المستخدم
+function decodeJwtResponse(token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
 }
