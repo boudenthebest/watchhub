@@ -21,32 +21,47 @@
         </div>
     </header>
 </body>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-<div id="g_id_onload"
-     data-client_id="1072787701159-0mtjiarec329rqrmmfabttv9qe8b4vaj.apps.googleusercontent.com"
-     data-callback="handleCredentialResponse"
-     data-redirect_uri="http://localhost:8000/oauth2callback">
-</div>
-<div class="g_id_signin" data-type="standard"></div>
-    <script>
-        function handleCredentialResponse(response) {
-            console.log("Encoded JWT ID token: " + response.credential);
-            // إرسال الـ token للخادم الخاص بك للتحقق
-            fetch('/auth/google', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ token: response.credential })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Login Successful');
-                    window.location.href = '/dashboard';
-                } else {
-                    alert('Login Failed');
-                }
-            });
-        }
-    </script>
+      <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <!-- زر تسجيل الدخول -->
+  <div id="g_id_onload"
+       data-client_id="YOUR_GOOGLE_CLIENT_ID"
+       data-context="use"
+       data-callback="handleCredentialResponse"
+       data-auto_prompt="false">
+  </div>
+  <div class="g_id_signin" data-type="standard"></div>
+
+  <script>
+    // استدعاء البيانات بعد تسجيل الدخول
+    function handleCredentialResponse(response) {
+      console.log("Encoded JWT ID token: " + response.credential);
+
+      // إرسال الـ token للـ Backend للتحقق
+      fetch('/auth/google', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ token: response.credential }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log("User Data:", data);
+        alert(`Welcome, ${data.name}`);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+    }
+
+    // تشغيل النافذة المنبثقة عند الضغط على الزر
+    function displayGooglePopup() {
+      google.accounts.id.prompt();
+    }
+  </script>
+
+  <button onclick="displayGooglePopup()">Login with Google</button>
 </body>
 </html>
