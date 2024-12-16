@@ -64,7 +64,7 @@ const { OAuth2Client } = require('google-auth-library');
 const bodyParser = require('body-parser');
 
 const app = express();
-const CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID';  // استبدلها بـ Client ID الخاص بك
+const CLIENT_ID = '1072787701159-0mtjiarec329rqrmmfabttv9qe8b4vaj.apps.googleusercontent.com';  // استبدلها بـ Client ID الخاص بك
 const client = new OAuth2Client(CLIENT_ID);
 
 app.use(bodyParser.json());
